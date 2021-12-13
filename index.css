@@ -1,0 +1,113 @@
+:root{
+    --color-operaciones: #ff9f0a;
+    --color-opciones: #a5a5a5;
+    --color-numeros: #333333; 
+    --color-cientifica: #212121;
+    --color-fondo: #000;
+    --color-blanco: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--color-fondo);
+    font-family: sans-serif;
+}
+
+.container{
+    width: 90%;
+    margin: 5px auto;
+}
+input{
+    width: 100%;
+    line-height: 50px;
+    font-size: 40px;
+    color: var(--color-blanco);
+    text-align: end;
+    border: none;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+input:focus{
+    outline: none;
+
+}
+
+span{
+    width: 70px;
+    height: 40px;
+    font-size: 18px;
+    margin: 3px;
+    border: none;
+    border-radius: 30px;
+}
+
+.operacion{
+    background-color: var(--color-operaciones);
+    color: var(--color-blanco);
+    padding: 10px 0;
+}
+.opciones{
+    background-color: var(--color-opciones);
+    color: var(--color-fondo);
+    padding: 10px 0;
+}
+.numero{
+    background-color: var(--color-numeros);
+    color: var(--color-blanco);
+    padding: 10px 0;
+}
+.botonera{
+    width: 100%;
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+    text-align: center;
+    justify-content: center;
+}
+span.numero-0{
+    width: 146px;
+    grid-column: 1 / 3;
+    text-align: start;
+    padding-left: 30px;
+}
+.cientifica{
+    background-color: var(--color-cientifica);
+    color: var(--color-blanco);
+    padding: 10px;
+}
+.calc-cientifica{
+    display: none;
+    grid-template-columns: repeat(6,2fr);
+    grid-template-rows: repeat(5,auto);
+}
+.calc-normal{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,auto);
+}
+@media (orientation: landscape){
+    .calc-cientifica{
+        display: grid;
+    }
+}
+
+@media (orientation: portrait){
+    input{
+        line-height: 300px;
+    }
+    span{
+        height: 60px;
+        width: 60px;
+        border-radius: 60px;
+        text-align: center;
+        /* padding-top: 10px; */
+    }
+    .botonera{
+        display: block;
+    }
+    .operacion{
+        padding: 10px 0;
+    }
+}
